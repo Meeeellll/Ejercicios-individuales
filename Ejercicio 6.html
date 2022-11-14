@@ -1,0 +1,51 @@
+<!--Elaborar un algoritmo para leer las notas de 1 estudiantes.​
+Calcular el promedio de cada estudiante de la siguiente manera:​
+Nota 1 (20%)​
+Nota 2 (30%)​
+Nota 3 (50%)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+
+    <h1>Ejercicio 6</h1>
+    <p><strong>Indicacion</strong><br>Elaborar un algoritmo para leer las notas de 1 estudiantes.​<br>
+        Calcular el promedio de cada estudiante de la siguiente manera:​<br>
+        Nota 1 (20%)​<br>
+        Nota 2 (30%)​<br>
+        Nota 3 (50%)
+        </p>
+
+        <form name="notas">
+            Ingrese la primera nota <input type="number" name="nota1"><br><br>
+            Ingrese la segunda nota <input type="number" name="nota2"><br><br>
+            Ingrese la tercera nota <input type="number" name="nota3"><br><br>
+            <input type="button" name="button1" value="promedio" onclick="promedio()">
+            <br>
+            <br>
+            El resultado es:
+            <input type="number" name="resultado">
+        </form>
+
+    <script>
+
+        function promedio(){
+            let nota1, nota2, nota3, resultado;
+            nota1 = parseInt(document.notas.nota1.value)*20;
+            nota2 = parseInt(document.notas.nota2.value)*30;
+            nota3 = parseInt(document.notas.nota3.value)*50;
+            resultado=0
+            resultado=(nota1+nota2+nota3)/(20+30+50);
+            document.notas.resultado.value=resultado;
+        }
+    </script>
+    
+</body>
+</html>

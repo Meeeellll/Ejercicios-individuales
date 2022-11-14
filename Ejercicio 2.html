@@ -1,0 +1,84 @@
+<!--En un cierto país el impuesto que se debe pagar por artículos importados se calcula mediante las siguientes reglas:​
+Precio​	Impuesto​
+$ 0.00 - $ 20.00​	No genera impuesto.​
+$ 20.01 - $ 40.00​	30 %​
+$ 40.01 - $ 500.00​	40 %​
+$ 500.01 en adelante​	50 %​
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <p><strong>Indicacion</strong></p>
+
+    <table>
+        <label>
+            En un cierto país el impuesto que se debe pagar por artículos importados se calcula mediante las siguientes reglas:​
+        </label>
+        <tr>
+            <th>Precio</th>
+            <th>Impuesto​</th>
+        </tr>
+        <tr>
+            <td>$ 0.00 - $ 20.00</td>
+            <td>No genera impuesto.​</td>
+        </tr>
+        <tr>
+            <td>$ 20.01 - $ 40.00</td>
+            <td>30 %​</td>
+        </tr>
+        <tr>
+            <td>$ 40.01 - $ 500.00</td>
+            <td>40 %​</td>
+        </tr>
+        <tr>
+            <td>$ 500.01 en adelante</td>
+            <td>50 %​</td>
+        </tr>
+    </table>
+
+    <form name="producto">
+        Ingrese el precio de su producto $<input type="number" name="precio" placeholder="20.76">
+        <br><br>
+        <input type="button" value="Realizar" onclick="operacion()">
+        <br><br>
+        Su total a pagar + impuestos es: $<input type="number" name="total">
+    </form>
+    
+    <script>
+
+        function operacion(){
+            var precio = parseFloat(document.producto.precio.value)
+            var total = 0
+
+            if (precio <= 20.00){
+                alert('Su producto no genera impuesto');
+                total=precio;
+                (document.producto.total.value)=total;
+            } else {
+                if (precio>=20.01 && precio <= 40.00){
+                    alert('Su producto genera 30% de impuestos');
+                    total=((precio*30)/100)+precio;
+                    (document.producto.total.value)=total;
+                } else if (precio>= 40.01 && precio <= 500.00){
+                    alert('Su producto genera 40% de impuestos');
+                    total=((precio*40)/100)+precio;
+                    (document.producto.total.value)=total;
+                } else {
+                    alert('Su producto genera 50% de impuestos');
+                    total=((precio*50)/100)+precio;
+                    (document.producto.total.value)=total;
+                }
+            } 
+        }
+        
+    </script>
+</body>
+</html>
